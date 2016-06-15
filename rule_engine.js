@@ -1,7 +1,7 @@
 // AV on 02-12-2015 for Multiple Rule
 ! function() {
   if (typeof require === "function") {
-    assertHelper = require('assert-helper');
+    assertHelper = require('axiom-assert-helper');
   }
   "use strict";
 
