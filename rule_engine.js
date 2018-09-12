@@ -16,7 +16,7 @@
       if (options.keys === undefined) {
         throw new Error("keys not defined.");
       } else if (assertHelper.checkType(options.keys, "array")) {
-        return lookupRuleEngine(options.keys);
+        return lookupRuleEngine(options.keys, options.ignoreCase);
       } else {
         throw new Error("Unexpected Type of keys Parameter");
       }
@@ -190,9 +190,11 @@
     return RE;
   }
 
-  function lookupRuleEngine(inputKeys) {
+  function lookupRuleEngine(inputKeys, ignoreCase) {
     "use strict";
-    var RE = {};
+    var RE = {
+      ignoreCase: ignoreCase
+    };
     RE.defaultCount = 0;
     var localRules = {};
     RE.addRule = function(input, output) {
@@ -203,7 +205,10 @@
       } else if (assertHelper.checkType(input, "Object")) {
         var localKeys = [];
         inputKeys.forEach(function(localKey) {
-          localKeys.push(input[localKey]);
+          if(RE.ignoreCase)
+            localKeys.push(input[localKey] ? input[localKey].toUpperCase(): NULL);
+          else
+            localKeys.push(input[localKey]);
         });
         // TODO
         // AV: 28/01/2016 Add Count
@@ -222,7 +227,10 @@
       } else if (assertHelper.checkType(input, "Object")) {
         var localKeys = [];
         inputKeys.forEach(function(localKey) {
-          localKeys.push(input[localKey]);
+          if(RE.ignoreCase)
+            localKeys.push(input[localKey] ? input[localKey].toUpperCase(): NULL);
+          else
+            localKeys.push(input[localKey]);
         });
         delete localRules[localKeys.join()];
       } else {
@@ -240,7 +248,10 @@
       } else if (assertHelper.checkType(input, "Object")) {
         var localKeys = [];
         inputKeys.forEach(function(localKey) {
-          localKeys.push(input[localKey]);
+          if(RE.ignoreCase)
+            localKeys.push(input[localKey] ? input[localKey].toUpperCase(): NULL);
+          else
+            localKeys.push(input[localKey]);
         });
         // TODO
         if (localRules.hasOwnProperty(localKeys.join()) === true) {
