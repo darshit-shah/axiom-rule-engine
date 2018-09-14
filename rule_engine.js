@@ -206,7 +206,7 @@
         var localKeys = [];
         inputKeys.forEach(function(localKey) {
           if(RE.ignoreCase)
-            localKeys.push(input[localKey] ? input[localKey].toUpperCase(): NULL);
+            localKeys.push(input[localKey] ? input[localKey].toUpperCase(): null);
           else
             localKeys.push(input[localKey]);
         });
@@ -228,7 +228,7 @@
         var localKeys = [];
         inputKeys.forEach(function(localKey) {
           if(RE.ignoreCase)
-            localKeys.push(input[localKey] ? input[localKey].toUpperCase(): NULL);
+            localKeys.push(input[localKey] ? input[localKey].toUpperCase(): null);
           else
             localKeys.push(input[localKey]);
         });
@@ -249,7 +249,7 @@
         var localKeys = [];
         inputKeys.forEach(function(localKey) {
           if(RE.ignoreCase)
-            localKeys.push(input[localKey] ? input[localKey].toUpperCase(): NULL);
+            localKeys.push(input[localKey] ? input[localKey].toUpperCase(): null);
           else
             localKeys.push(input[localKey]);
         });
