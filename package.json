@@ -1,6 +1,6 @@
 {
   "name": "axiom-rule-engine",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "---\r #### Author : Axiom\r ##### Created on : 2th Nov 2015\r <!-- ##### Update Date : 24th Nov 2015 -->\r ---\r This Rules Engine is used to bind the rules and gets the result based on rules. It have 'RulesEngine()' function which returns 'RE' Object. You require to import 'assertHelper.js' file for use this rules engine library.It is also require user to set **defaultResult** before using getResult() method.\r - Create Instance Of RulesEngine\r - Useful Functions   - addRule()   - removeRule()   - getResult()   - print()   - getRule()   - getAllRules() - variable\r   - defaultResult",
   "main": "rule_engine.js",
   "scripts": {
