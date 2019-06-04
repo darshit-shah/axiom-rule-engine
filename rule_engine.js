@@ -205,7 +205,7 @@
       } else if (assertHelper.checkType(input, "Object")) {
         var localKeys = [];
         inputKeys.forEach(function(localKey) {
-          if(RE.ignoreCase)
+          if(RE.ignoreCase && typeof input[localKey]=='string')
             localKeys.push(input[localKey] ? input[localKey].toUpperCase(): null);
           else
             localKeys.push(input[localKey]);
